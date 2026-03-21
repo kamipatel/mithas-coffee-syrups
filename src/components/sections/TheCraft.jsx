@@ -72,7 +72,7 @@ function AnimatedCheckmark() {
 
 export default function TheCraft() {
   return (
-    <section className="px-6 py-[100px] bg-cream" id="craft">
+    <section className="px-6 pt-[60px] pb-[40px] bg-cream" id="craft">
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
 
@@ -80,7 +80,7 @@ export default function TheCraft() {
           <div className="md:col-span-2">
             <div
               className="bg-gradient-to-br from-parchment via-cream to-linen rounded-3xl overflow-hidden relative z-10"
-              style={{ minHeight: "350px" }}
+              style={{ minHeight: "280px" }}
             >
               <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom={COLORS.gold} colorTo={COLORS.roseGold} />
               <Particles className="absolute inset-0 z-0" quantity={80} ease={80} color={COLORS.gold} refresh />

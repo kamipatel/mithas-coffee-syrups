@@ -14,7 +14,7 @@ export default function SyrupGrid() {
   return (
     <section
       id="syrups"
-      className="px-6 py-[90px] pb-[110px]"
+      className="px-6 pt-[70px] pb-[60px] md:pt-[100px] md:pb-[80px]"
       style={{
         background: `linear-gradient(180deg, ${COLORS.cream} 0%, ${COLORS.parchment} 30%, ${COLORS.parchment} 70%, ${COLORS.cream} 100%)`,
       }}

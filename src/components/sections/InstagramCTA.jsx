@@ -29,7 +29,7 @@ function TypingText({ text, className }) {
 export default function InstagramCTA() {
   return (
     <HeroHighlight
-      containerClassName="px-6 py-20 text-center relative bg-gradient-to-b from-cream to-parchment/[0.03]"
+      containerClassName="px-6 py-[70px] md:py-[100px] text-center relative bg-gradient-to-b from-cream to-parchment/[0.03]"
     >
       <Reveal>
         <p className="font-serif text-[clamp(26px,4.5vw,40px)] text-espresso mb-3 font-normal italic">

@@ -59,7 +59,7 @@ export default function HowToOrder() {
   const stepRefs = [step1Ref, step2Ref, step3Ref];
 
   return (
-    <section id="order" className="px-6 py-[100px] pb-[110px] bg-cream">
+    <section id="order" className="px-6 py-[70px] md:py-[100px] bg-cream">
       <div className="max-w-[900px] mx-auto">
         <Reveal>
           <div className="text-center mb-14">
@@ -103,7 +103,7 @@ export default function HowToOrder() {
             <Reveal key={i} delay={i * 0.12} className="h-full">
               <div
                 ref={stepRefs[i]}
-                className="h-full flex flex-col text-center p-[36px_24px_32px] rounded-[20px] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] relative"
+                className="h-full flex flex-col text-center p-[36px_24px_32px] rounded-2xl bg-white shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] relative"
               >
                 <div
                   className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-[18px]"

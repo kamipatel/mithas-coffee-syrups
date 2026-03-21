@@ -13,7 +13,16 @@ export default function Navbar() {
   const activeSection = useActiveSection(navIds);
 
   useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -44,7 +53,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex gap-1.5 items-center">
+        <div className="hidden lg:flex gap-1.5 items-center">
           {navLinks.map((l) => (
             <button
               key={l.id}
@@ -72,7 +81,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden bg-transparent border-none cursor-pointer p-2 z-[101]"
+          className="lg:hidden bg-transparent border-none cursor-pointer p-2 z-[101]"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}

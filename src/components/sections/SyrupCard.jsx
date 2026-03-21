@@ -30,7 +30,7 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "bg-white rounded-[20px] overflow-hidden cursor-pointer relative group",
+        "bg-white rounded-2xl overflow-hidden cursor-pointer relative group",
         "border-2 transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
         isActive
           ? "-translate-y-1.5"

@@ -4,14 +4,16 @@ import FloatingCTA from "@/components/layout/FloatingCTA";
 import PageIntro from "@/components/layout/PageIntro";
 import Hero from "@/components/sections/Hero";
 import MarqueeSection from "@/components/sections/MarqueeSection";
-import Story from "@/components/sections/Story";
-import SyrupGrid from "@/components/sections/SyrupGrid";
-import TheCraft from "@/components/sections/TheCraft";
-import Recipes from "@/components/sections/Recipes";
-import Testimonials from "@/components/sections/Testimonials";
-import HowToOrder from "@/components/sections/HowToOrder";
-import PopUpCafe from "@/components/sections/PopUpCafe";
-import InstagramCTA from "@/components/sections/InstagramCTA";
+import dynamic from "next/dynamic";
+
+const Story = dynamic(() => import("@/components/sections/Story"));
+const SyrupGrid = dynamic(() => import("@/components/sections/SyrupGrid"));
+const TheCraft = dynamic(() => import("@/components/sections/TheCraft"));
+const Recipes = dynamic(() => import("@/components/sections/Recipes"));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
+const HowToOrder = dynamic(() => import("@/components/sections/HowToOrder"));
+const PopUpCafe = dynamic(() => import("@/components/sections/PopUpCafe"));
+const InstagramCTA = dynamic(() => import("@/components/sections/InstagramCTA"));
 
 export default function Home() {
   return (

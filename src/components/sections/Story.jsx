@@ -6,7 +6,7 @@ import { BorderBeam } from "@/components/ui/border-beam";
 
 export default function Story() {
   return (
-    <section id="story" className="px-6 py-[100px] pb-[110px]">
+    <section id="story" className="px-6 py-[70px] md:py-[100px]">
       <div className="max-w-[760px] mx-auto">
         <div className="text-center">
           <Reveal>

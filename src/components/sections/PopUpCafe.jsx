@@ -47,7 +47,7 @@ const cardVariants = {
 
 export default function PopUpCafe() {
   return (
-    <section id="popups" className="px-6 py-[90px] pb-[100px] bg-parchment relative overflow-hidden">
+    <section id="popups" className="px-6 py-[70px] md:py-[100px] bg-parchment relative overflow-hidden">
       <div className="max-w-[880px] mx-auto relative z-10">
         <Reveal>
           <div className="text-center mb-12">
@@ -81,7 +81,7 @@ export default function PopUpCafe() {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={cardVariants}
               >
-                <div className="bg-white rounded-[18px] p-[28px_22px] shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-gold/[0.06] text-center h-full">
+                <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-gold/[0.06] text-center h-full">
                   <div className="w-[52px] h-[52px] rounded-full bg-gold/[0.08] flex items-center justify-center mx-auto mb-3">
                     <Icon size={24} className="text-gold" strokeWidth={1.5} />
                   </div>

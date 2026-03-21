@@ -166,7 +166,7 @@ export const navLinks = [
   { label: "Order", id: "order" },
 ];
 
-export const navIds = ["story", "syrups", "recipes", "order", "popups"];
+export const navIds = ["hero", "story", "syrups", "recipes", "order", "popups"];
 
 export const popupFeatures = [
   {

@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/constants";
 export default function Testimonials() {
   return (
     <section
-      className="py-20 bg-parchment overflow-hidden"
+      className="py-[70px] md:py-[100px] bg-parchment overflow-hidden"
       role="region"
       aria-label="Customer testimonials"
     >

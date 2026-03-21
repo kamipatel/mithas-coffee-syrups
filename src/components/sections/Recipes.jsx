@@ -49,7 +49,7 @@ function TiltCard({ children, className }) {
 
 export default function Recipes() {
   return (
-    <section id="recipes" className="px-6 py-[100px] bg-cream">
+    <section id="recipes" className="px-6 py-[70px] md:py-[100px] bg-cream">
       <div className="max-w-[900px] mx-auto">
         <Reveal>
           <div className="text-center mb-[52px]">
@@ -78,7 +78,7 @@ export default function Recipes() {
 
 function RecipeCardContent({ recipe: r }) {
   return (
-    <div className="bg-white rounded-[20px] p-[32px_28px] shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full flex flex-col">
+    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full flex flex-col">
       <div
         className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center mb-5"
         style={{ background: `${r.color}10`, color: r.color }}
@@ -88,7 +88,7 @@ function RecipeCardContent({ recipe: r }) {
       <h3 className="font-serif text-[22px] text-espresso mb-3 font-semibold">
         {r.title}
       </h3>
-      <p className="font-sans text-sm text-walnut leading-[1.75] mb-5 font-light flex-1">
+      <p className="font-sans text-sm text-walnut leading-[1.75] mb-6 font-light flex-grow">
         {r.steps}
       </p>
       <span

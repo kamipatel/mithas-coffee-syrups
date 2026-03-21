@@ -89,7 +89,16 @@ export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -99,7 +108,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-[120px] pb-20 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-[120px] pb-[120px] relative overflow-hidden">
       <GrainOverlay />
 
       {/* Spotlight */}
