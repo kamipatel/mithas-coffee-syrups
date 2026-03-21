@@ -202,7 +202,7 @@ export default function Hero() {
 
       {/* Availability badge */}
       <motion.div 
-        className="flex items-center justify-center gap-[8px] mb-8"
+        className="relative z-10 flex items-center justify-center gap-[8px] mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
