@@ -18,7 +18,7 @@ export default function PageIntro({ children }) {
         const timer = setTimeout(() => {
           setLoading(false);
           sessionStorage.setItem("mithas-visited", "true");
-        }, 2200);
+        }, 1500);
         return () => clearTimeout(timer);
       }
     }
@@ -33,7 +33,7 @@ export default function PageIntro({ children }) {
           <motion.div
             className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-espresso"
             exit={{ y: "-100%" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <TextGenerateEffect
               words="mithas"

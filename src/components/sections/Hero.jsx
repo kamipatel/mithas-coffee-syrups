@@ -11,6 +11,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { FlipWords } from "@/components/ui/flip-words";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { MovingBorder } from "@/components/ui/moving-border";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { COLORS, INSTAGRAM_URL } from "@/lib/constants";
 
@@ -120,11 +121,11 @@ export default function Hero() {
       {/* Particles */}
       <Particles
         className="absolute inset-0 z-0"
-        quantity={35}
+        quantity={30}
         color="#C4973B"
-        ease={80}
-        size={0.6}
-        staticity={40}
+        ease={120}
+        size={0.4}
+        staticity={60}
       />
 
       {/* Animated gradient background */}
@@ -224,8 +225,8 @@ export default function Hero() {
           <TextGenerateEffect
             words="mithas"
             className="font-serif text-[clamp(56px,12vw,110px)] font-normal text-espresso tracking-[-0.03em] leading-none"
-            duration={0.5}
-            staggerDelay={0.03}
+            duration={1.5}
+            staggerDelay={0.08}
           />
         </h1>
       </Reveal>
@@ -262,12 +263,17 @@ export default function Hero() {
       {/* CTA buttons */}
       <Reveal delay={0.85} y={20}>
         <div className="flex gap-3.5 mt-10 flex-wrap justify-center">
-          <button
+          <MovingBorder
+            duration={8000}
+            rx="100"
+            ry="100"
+            containerClassName="cursor-pointer"
+            className="bg-espresso text-cream font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)] active:scale-[0.98]"
+            as="button"
             onClick={() => scrollTo("syrups")}
-            className="bg-espresso text-cream border-none font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full cursor-pointer transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)] active:scale-[0.98]"
           >
             Explore Syrups
-          </button>
+          </MovingBorder>
           <ShimmerButton
             shimmerColor="#C4973B"
             shimmerSize="0.08em"

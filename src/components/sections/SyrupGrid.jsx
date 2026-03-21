@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -32,13 +33,19 @@ export default function SyrupGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {syrups.map((s, i) => (
-            <Reveal key={s.id} delay={i * 0.08}>
+            <motion.div
+              key={s.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            >
               <SyrupCard
                 syrup={s}
                 isActive={activeSyrup === i}
                 onClick={() => setActiveSyrup(i)}
               />
-            </Reveal>
+            </motion.div>
           ))}
         </div>
 

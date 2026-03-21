@@ -1,11 +1,14 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import { getIcon } from "@/lib/icons";
 import { Coffee } from "lucide-react";
 import { NumberTicker } from "@/components/ui/number-ticker";
+import { Lens } from "@/components/ui/lens";
+import { Sparkles } from "@/components/ui/sparkles";
 
 export default function SyrupCard({ syrup, isActive, onClick }) {
   const s = syrup;
@@ -22,19 +25,60 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
     });
   };
 
-  return (
+  const imageContent = (
     <div
+      className="h-[140px] relative flex items-center justify-center overflow-hidden"
+      style={{ background: s.bg }}
+    >
+      {(() => {
+        const Icon = getIcon(s.icon);
+        return (
+          <span
+            className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{ transform: isActive ? "scale(1.1)" : "scale(1)", color: s.color }}
+          >
+            <Icon size={44} strokeWidth={1.2} />
+          </span>
+        );
+      })()}
+
+      {s.tag && (
+        s.tag === "Bestseller" ? (
+          <Sparkles color="#C4973B" count={3}>
+            <span
+              className="absolute top-3 right-3 text-white font-sans text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full animate-pulse"
+              style={{ background: `${s.color}dd` }}
+            >
+              {s.tag}
+            </span>
+          </Sparkles>
+        ) : (
+          <span
+            className="absolute top-3 right-3 text-white font-sans text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full"
+            style={{ background: `${s.color}dd` }}
+          >
+            {s.tag}
+          </span>
+        )
+      )}
+    </div>
+  );
+
+  return (
+    <motion.div
       ref={cardRef}
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className={cn(
         "bg-white rounded-2xl overflow-hidden cursor-pointer relative group",
-        "border-2 transition-all duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
+        "border-2 transition-colors duration-[400ms]",
         isActive
           ? "-translate-y-1.5"
-          : "border-transparent shadow-[0_2px_16px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+          : "border-transparent shadow-[0_2px_16px_rgba(0,0,0,0.03)]"
       )}
       style={{
         borderColor: isActive ? `${s.color}50` : undefined,
@@ -53,34 +97,14 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
         }}
       />
 
-      {/* Image container — swap emoji for <Image /> later */}
-      <div
-        className="h-[140px] relative flex items-center justify-center overflow-hidden"
-        style={{ background: s.bg }}
-      >
-        {(() => {
-          const Icon = getIcon(s.icon);
-          return (
-            <span
-              className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-              style={{ transform: isActive ? "scale(1.1)" : "scale(1)", color: s.color }}
-            >
-              <Icon size={44} strokeWidth={1.2} />
-            </span>
-          );
-        })()}
-
-        {s.tag && (
-          <span
-            className={cn(
-              "absolute top-3 right-3 text-white font-sans text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full",
-              s.tag === "Bestseller" && "animate-pulse"
-            )}
-            style={{ background: `${s.color}dd` }}
-          >
-            {s.tag}
-          </span>
-        )}
+      {/* Image container with Lens on desktop */}
+      <div className="hidden md:block">
+        <Lens zoomFactor={1.4} lensSize={140}>
+          {imageContent}
+        </Lens>
+      </div>
+      <div className="md:hidden">
+        {imageContent}
       </div>
 
       <div className="p-[22px_24px_26px] relative z-10">
@@ -113,8 +137,8 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
 
         <div className="flex justify-between items-center mt-[18px]">
           <div className="flex items-baseline gap-1">
-            <span className="font-serif text-[28px] text-espresso font-semibold">
-              $<NumberTicker value={s.displayPrice} className="font-serif text-[28px] text-espresso font-semibold" />
+            <span className="font-serif text-[28px] text-gold font-semibold">
+              $<NumberTicker value={s.displayPrice} className="font-serif text-[28px] text-gold font-semibold" />
             </span>
             <span className="font-sans text-[10px] text-walnut/50 tracking-[0.06em]">
               per bottle
@@ -135,6 +159,6 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -71,6 +71,7 @@ export default function HowToOrder() {
         <div
           ref={containerRef}
           className="grid grid-cols-1 md:grid-cols-3 gap-7 relative"
+          style={{ perspective: "1000px" }}
         >
           {/* Animated beams connecting steps (desktop only) */}
           <div className="hidden md:block absolute inset-0 pointer-events-none z-0">
@@ -100,7 +101,14 @@ export default function HowToOrder() {
           </div>
 
           {steps.map((item, i) => (
-            <Reveal key={i} delay={i * 0.12} className="h-full">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, rotateY: -15, x: -30 }}
+              whileInView={{ opacity: 1, rotateY: 0, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2, type: "spring", stiffness: 150, damping: 20 }}
+              className="h-full"
+            >
               <div
                 ref={stepRefs[i]}
                 className="h-full flex flex-col text-center p-[36px_24px_32px] rounded-2xl bg-white shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] relative"
@@ -126,7 +134,7 @@ export default function HowToOrder() {
                   {item.desc}
                 </p>
               </div>
-            </Reveal>
+            </motion.div>
           ))}
         </div>
 

@@ -1,18 +1,17 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Ripple } from "@/components/ui/ripple";
-import { getIcon } from "@/lib/icons";
-import { BorderBeam } from "@/components/ui/border-beam";
-import { Particles } from "@/components/ui/particles";
-import { Meteors } from "@/components/ui/meteors";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { COLORS } from "@/lib/constants";
 
-// TODO: Replace entire div with <Spline scene="URL" />
+const WavyBackground = dynamic(
+  () => import("@/components/ui/wavy-background").then((mod) => mod.WavyBackground),
+  { ssr: false }
+);
 
 const BULLETS = [
   {
@@ -32,10 +31,31 @@ const BULLETS = [
   },
 ];
 
-const FLOATING_ICONS = [
-  { icon: "droplets", top: "15%", left: "12%", duration: 20 },
-  { icon: "flower2", top: "60%", left: "78%", duration: 26 },
-  { icon: "coffee", top: "75%", left: "20%", duration: 22 },
+const GRADIENT_ORBS = [
+  {
+    size: "w-[200px] h-[200px]",
+    color: COLORS.gold,
+    blur: "blur-[80px]",
+    position: { top: "10%", left: "15%" },
+    animate: { x: [0, 30, -10, 0], y: [0, -25, 15, 0], scale: [1, 1.1, 0.95, 1] },
+    duration: 8,
+  },
+  {
+    size: "w-[140px] h-[140px]",
+    color: COLORS.rose,
+    blur: "blur-[60px]",
+    position: { bottom: "15%", right: "10%" },
+    animate: { x: [0, -20, 15, 0], y: [0, 18, -12, 0], scale: [1, 0.92, 1.08, 1] },
+    duration: 6,
+  },
+  {
+    size: "w-[100px] h-[100px]",
+    color: "#D4A843",
+    blur: "blur-[50px]",
+    position: { top: "50%", left: "60%" },
+    animate: { x: [0, 25, -18, 0], y: [0, -15, 22, 0], scale: [1, 1.06, 0.94, 1] },
+    duration: 10,
+  },
 ];
 
 function GoldCheckmark() {
@@ -76,43 +96,57 @@ export default function TheCraft() {
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
 
-          {/* Left column — interactive visual */}
+          {/* Left column — WavyBackground with orbs and rotating emoji */}
           <div className="md:col-span-2">
-            <div
-              className="bg-gradient-to-br from-parchment via-cream to-linen rounded-3xl overflow-hidden relative z-10"
-              style={{ minHeight: "280px" }}
+            <WavyBackground
+              containerClassName="rounded-3xl overflow-hidden"
+              className="flex items-center justify-center"
+              speed="slow"
+              waveOpacity={0.4}
+              blur={12}
+              colors={[
+                "rgba(196, 151, 59, 0.25)",
+                "rgba(201, 168, 124, 0.2)",
+                "rgba(196, 114, 127, 0.15)",
+                "rgba(237, 231, 219, 0.3)",
+                "rgba(212, 168, 67, 0.18)",
+              ]}
             >
-              <BorderBeam size={200} duration={12} delay={9} borderWidth={1.5} colorFrom={COLORS.gold} colorTo={COLORS.roseGold} />
-              <Particles className="absolute inset-0 z-0" quantity={80} ease={80} color={COLORS.gold} refresh />
-              <Meteors number={15} />
-
-              {/* Floating icon orbs */}
-              {FLOATING_ICONS.map(({ icon, top, left, duration }) => {
-                const Icon = getIcon(icon);
-                return (
-                  <motion.span
-                    key={icon}
-                    className="absolute select-none pointer-events-none text-walnut/20"
-                    style={{ top, left }}
-                    animate={{ rotate: 360 }}
-                    transition={{
-                      repeat: Infinity,
-                      duration,
-                      ease: "linear",
+              <div className="relative w-full" style={{ minHeight: "280px" }}>
+                {/* Animated gradient orbs */}
+                {GRADIENT_ORBS.map((orb, i) => (
+                  <motion.div
+                    key={i}
+                    className={`absolute rounded-full pointer-events-none ${orb.size} ${orb.blur}`}
+                    style={{
+                      backgroundColor: orb.color,
+                      opacity: 0.35,
+                      ...orb.position,
                     }}
-                  >
-                    <Icon size={28} strokeWidth={1} />
-                  </motion.span>
-                );
-              })}
+                    animate={orb.animate}
+                    transition={{
+                      duration: orb.duration,
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      ease: "easeInOut",
+                    }}
+                  />
+                ))}
 
-              {/* Ripple centered in container */}
-              <Ripple
-                mainCircleSize={160}
-                mainCircleOpacity={0.18}
-                numCircles={6}
-              />
-            </div>
+                {/* Rotating honey emoji */}
+                <motion.span
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl select-none pointer-events-none"
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                >
+                  🍯
+                </motion.span>
+              </div>
+            </WavyBackground>
           </div>
 
           {/* Right column — text content */}
