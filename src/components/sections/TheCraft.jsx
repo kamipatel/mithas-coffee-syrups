@@ -60,7 +60,7 @@ function AnimatedCheckmark() {
 
 export default function TheCraft() {
   return (
-    <section className="px-6 pt-[60px] pb-[40px] bg-cream" id="craft">
+    <section className="px-6 py-14 bg-cream" id="craft">
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
 

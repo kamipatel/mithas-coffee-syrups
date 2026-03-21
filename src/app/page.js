@@ -4,6 +4,7 @@ import FloatingCTA from "@/components/layout/FloatingCTA";
 import PageIntro from "@/components/layout/PageIntro";
 import Hero from "@/components/sections/Hero";
 import MarqueeSection from "@/components/sections/MarqueeSection";
+import AnimatedDivider from "@/components/ui/AnimatedDivider";
 import dynamic from "next/dynamic";
 
 const Story = dynamic(() => import("@/components/sections/Story"));
@@ -21,14 +22,23 @@ export default function Home() {
       <div className="bg-cream min-h-screen overflow-x-hidden relative">
         <Navbar />
         <Hero />
+        <AnimatedDivider variant="beam" />
         <MarqueeSection />
+        <AnimatedDivider variant="dots" />
         <Story />
+        <AnimatedDivider variant="wave" />
         <SyrupGrid />
+        <AnimatedDivider variant="dots" />
         <TheCraft />
+        <AnimatedDivider variant="dots" />
         <Recipes />
+        <AnimatedDivider variant="ripple" />
         <Testimonials />
+        <AnimatedDivider variant="dots" className="py-8" />
         <HowToOrder />
+        <AnimatedDivider variant="wave" className="rotate-180" />
         <PopUpCafe />
+        <AnimatedDivider variant="expand" />
         <InstagramCTA />
         <Footer />
         <FloatingCTA />

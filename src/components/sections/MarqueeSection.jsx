@@ -1,14 +1,15 @@
+import { Coffee, Leaf, Gift, Home, Tent, CupSoda, GraduationCap, Globe } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
 const CUSTOMER_PILLS = [
-  { emoji: "☕", label: "Coffee Lovers" },
-  { emoji: "🍵", label: "Matcha Addicts" },
-  { emoji: "🎁", label: "Gift Givers" },
-  { emoji: "🏠", label: "Home Baristas" },
-  { emoji: "🎪", label: "Pop-Up Regulars" },
-  { emoji: "🫖", label: "Chai Enthusiasts" },
-  { emoji: "🤘", label: "UT Students" },
-  { emoji: "🇮🇳", label: "Desi Food Fans" },
+  { icon: Coffee, label: "Coffee Lovers" },
+  { icon: Leaf, label: "Matcha Addicts" },
+  { icon: Gift, label: "Gift Givers" },
+  { icon: Home, label: "Home Baristas" },
+  { icon: Tent, label: "Pop-Up Regulars" },
+  { icon: CupSoda, label: "Chai Enthusiasts" },
+  { icon: GraduationCap, label: "UT Students" },
+  { icon: Globe, label: "Desi Food Fans" },
 ];
 
 const FLAVOR_STRING =
@@ -26,15 +27,18 @@ export default function MarqueeSection() {
           pauseOnHover
           className="[--duration:35s] [--gap:0.75rem]"
         >
-          {CUSTOMER_PILLS.map((pill) => (
-            <span
-              key={pill.label}
-              className="inline-flex items-center gap-1.5 bg-cream text-espresso font-sans text-sm font-medium px-4 py-2 rounded-full border border-gold/10 hover:border-gold/30 transition-colors whitespace-nowrap"
-            >
-              <span className="text-base">{pill.emoji}</span>
-              {pill.label}
-            </span>
-          ))}
+          {CUSTOMER_PILLS.map((pill) => {
+            const Icon = pill.icon;
+            return (
+              <span
+                key={pill.label}
+                className="inline-flex items-center gap-1.5 bg-cream text-espresso font-sans text-sm font-medium px-4 py-2 rounded-full border border-gold/10 hover:border-gold/30 transition-colors whitespace-nowrap"
+              >
+                <Icon size={16} strokeWidth={1.5} className="text-gold" />
+                {pill.label}
+              </span>
+            );
+          })}
         </Marquee>
       </div>
 

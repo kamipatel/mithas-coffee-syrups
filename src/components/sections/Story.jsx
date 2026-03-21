@@ -9,7 +9,7 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export default function Story() {
   return (
-    <section id="story" className="px-6 py-[70px] md:py-[100px]">
+    <section id="story" className="px-6 py-14">
       <TracingBeam beamColor="#C4973B">
         <div className="max-w-[760px] mx-auto">
           <div className="text-center">

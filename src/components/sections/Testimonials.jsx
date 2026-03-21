@@ -8,11 +8,11 @@ import { testimonials } from "@/lib/constants";
 export default function Testimonials() {
   return (
     <section
-      className="py-[70px] md:py-[100px] bg-parchment overflow-hidden"
+      className="py-12 bg-parchment overflow-hidden"
       role="region"
       aria-label="Customer testimonials"
     >
-      <div className="max-w-[900px] mx-auto text-center px-6 mb-10">
+      <div className="max-w-[900px] mx-auto text-center px-6 mb-12">
         <Reveal>
           <SectionLabel>Kind Words</SectionLabel>
         </Reveal>

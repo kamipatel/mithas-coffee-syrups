@@ -48,18 +48,12 @@ const cardVariants = {
 
 export default function PopUpCafe() {
   return (
-    <section id="popups" className="px-6 py-[70px] md:py-[100px] bg-parchment relative overflow-hidden">
+    <section id="popups" className="px-6 py-14 bg-parchment relative overflow-hidden">
       <div className="max-w-[880px] mx-auto relative z-10">
         <Reveal>
           <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="mb-4">
               <SectionLabel>Events</SectionLabel>
-              {/* Pulsing location dot */}
-              <motion.div
-                className="w-2.5 h-2.5 rounded-full bg-gold"
-                animate={{ scale: [1, 1.8, 1], opacity: [1, 0.3, 1] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              />
             </div>
             <SectionTitle>Pop-Up Caf&eacute;</SectionTitle>
             <p className="font-sans text-base text-walnut max-w-[480px] mx-auto mt-4 leading-[1.75] font-light opacity-80">

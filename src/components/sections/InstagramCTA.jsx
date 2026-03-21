@@ -37,7 +37,7 @@ function TypingText({ text, className }) {
 
 export default function InstagramCTA() {
   return (
-    <section className="px-6 pt-12 pb-8 text-center relative bg-cream border-t border-gold/[0.05]">
+    <section className="px-6 py-14 text-center relative bg-cream border-t border-gold/[0.05]">
       <Reveal>
         <p className="font-serif text-[clamp(26px,4.5vw,40px)] text-espresso mb-3 font-normal italic">
           Follow the journey

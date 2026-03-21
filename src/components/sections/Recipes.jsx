@@ -50,7 +50,7 @@ function TiltCard({ children, className }) {
 
 export default function Recipes() {
   return (
-    <section id="recipes" className="px-6 py-[70px] md:py-[100px] bg-cream">
+    <section id="recipes" className="px-6 py-14 bg-cream">
       <div className="max-w-[900px] mx-auto">
         <Reveal>
           <div className="text-center mb-[52px]">
