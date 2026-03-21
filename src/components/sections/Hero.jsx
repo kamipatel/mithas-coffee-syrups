@@ -192,32 +192,27 @@ export default function Hero() {
         </div>
       </Reveal>
 
-      {/* Logo medallion */}
-      <Reveal delay={0.1} y={30}>
-        <div
-          className="w-[72px] h-[72px] rounded-full flex items-center justify-center mx-auto mb-7"
-          style={{
-            background: `linear-gradient(135deg, ${COLORS.parchment}, ${COLORS.linen})`,
-            border: `1px solid ${COLORS.gold}30`,
-            boxShadow: `0 8px 32px ${COLORS.gold}12`,
-          }}
-        >
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="16" r="4" fill={COLORS.gold} />
-            <circle cx="16" cy="16" r="9" stroke={COLORS.gold} strokeWidth="0.8" opacity="0.5" />
-            {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
-              <circle
-                key={a}
-                cx={16 + 9 * Math.cos((a * Math.PI) / 180)}
-                cy={16 + 9 * Math.sin((a * Math.PI) / 180)}
-                r="1.8"
-                fill={COLORS.gold}
-                opacity="0.4"
-              />
-            ))}
-          </svg>
-        </div>
-      </Reveal>
+      {/* Background mandala watermark */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none origin-center"
+        style={{ opacity: 0.15 }}
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+      >
+        <svg width="700" height="700" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="3" fill={COLORS.gold} opacity="0.5" />
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+            <circle
+              key={a}
+              cx={16 + 9 * Math.cos((a * Math.PI) / 180)}
+              cy={16 + 9 * Math.sin((a * Math.PI) / 180)}
+              r="1.2"
+              fill={COLORS.gold}
+              opacity="0.6"
+            />
+          ))}
+        </svg>
+      </motion.div>
 
       {/* Title */}
       <Reveal delay={0.25} y={40}>
