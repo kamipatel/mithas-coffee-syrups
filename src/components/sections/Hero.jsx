@@ -119,13 +119,13 @@ export default function Hero() {
           alt="Mithas aesthetic"
           fill
           className="object-cover"
-          style={{ opacity: 0.2 }}
+          style={{ opacity: 0.08 }}
           priority
         />
         <div
           className="absolute inset-0"
           style={{
-            background: `linear-gradient(to bottom, ${COLORS.cream}CC, ${COLORS.cream}40 50%, ${COLORS.cream}CC)`,
+            background: `radial-gradient(circle at center, ${COLORS.cream} 0%, ${COLORS.cream}E6 30%, ${COLORS.cream}00 100%), linear-gradient(to bottom, ${COLORS.cream} 0%, transparent 50%, ${COLORS.cream} 100%)`,
           }}
         />
       </div>
