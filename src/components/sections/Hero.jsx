@@ -201,14 +201,22 @@ export default function Hero() {
       ))}
 
       {/* Availability badge */}
-      <Reveal delay={0} y={20}>
-        <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-gold/10">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="font-sans text-xs text-walnut font-medium tracking-wide">
-            Accepting orders &middot; West Campus pickup
-          </span>
-        </div>
-      </Reveal>
+      <motion.div 
+        className="flex items-center justify-center gap-[8px] mb-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.8 }}
+      >
+        <motion.span 
+          className="w-1 h-1 rounded-full shrink-0"
+          style={{ backgroundColor: COLORS.gold }}
+          animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <span className="font-sans text-[11px] text-gold uppercase tracking-[0.2em] font-semibold leading-none mt-[1px]">
+          ACCEPTING ORDERS &middot; WEST CAMPUS PICKUP
+        </span>
+      </motion.div>
 
       {/* Background mandala watermark — perfectly centered using flexbox */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
