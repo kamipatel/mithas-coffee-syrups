@@ -206,6 +206,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.8 }}
+        exit={undefined}
       >
         <motion.span 
           className="w-1 h-1 rounded-full shrink-0"
