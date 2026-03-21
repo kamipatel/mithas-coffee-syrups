@@ -44,9 +44,9 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
 
       {s.tag && (
         s.tag === "Bestseller" ? (
-          <Sparkles color="#C4973B" count={3}>
+          <Sparkles color="#C4973B" count={3} className="absolute top-3 right-3">
             <span
-              className="absolute top-3 right-3 text-white font-sans text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full animate-pulse"
+              className="text-white font-sans text-[10px] font-semibold tracking-[0.08em] uppercase px-2.5 py-1 rounded-full animate-pulse"
               style={{ background: `${s.color}dd` }}
             >
               {s.tag}

@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -78,7 +79,13 @@ export default function Recipes() {
 
 function RecipeCardContent({ recipe: r }) {
   return (
-    <div className="bg-white rounded-2xl p-6 md:p-8 shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full flex flex-col">
+    <div className="bg-white rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full flex flex-col overflow-hidden">
+      {r.image && (
+        <div className="relative w-full h-44">
+          <Image src={r.image} alt={r.title} fill className="object-cover" loading="lazy" />
+        </div>
+      )}
+      <div className="p-6 md:p-8 flex flex-col flex-grow">
       <div
         className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center mb-5"
         style={{ background: `${r.color}10`, color: r.color }}
@@ -97,6 +104,7 @@ function RecipeCardContent({ recipe: r }) {
       >
         {r.time}
       </span>
+      </div>
     </div>
   );
 }

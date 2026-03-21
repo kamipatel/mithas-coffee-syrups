@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { navLinks, navIds, INSTAGRAM_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -47,9 +48,16 @@ export default function Navbar() {
       >
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="bg-transparent border-none cursor-pointer p-0 font-serif text-2xl font-semibold text-espresso tracking-[0.02em]"
+          className="bg-transparent border-none cursor-pointer p-0"
         >
-          mithas
+          <Image
+            src="/images/logo.png"
+            alt="mithas"
+            width={120}
+            height={32}
+            className="h-8 w-auto"
+            priority
+          />
         </button>
 
         {/* Desktop nav */}

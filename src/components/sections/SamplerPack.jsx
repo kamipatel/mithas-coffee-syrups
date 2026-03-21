@@ -1,4 +1,4 @@
-import { Flower2, Leaf, TreePalm } from "lucide-react";
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { Meteors } from "@/components/ui/meteors";
@@ -66,15 +66,20 @@ export default function SamplerPack() {
         </div>
 
         {/* Visual side */}
-        <div
-          className="flex items-center justify-center p-10 text-[80px] gap-2 relative z-10"
-          style={{
-            background: `radial-gradient(circle at center, ${COLORS.gold}08, transparent 60%)`,
-          }}
-        >
-          <Flower2 size={48} strokeWidth={1.2} className="text-cream drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]" />
-          <Leaf size={48} strokeWidth={1.2} className="text-cream drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]" />
-          <TreePalm size={48} strokeWidth={1.2} className="text-cream drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]" />
+        <div className="relative overflow-hidden min-h-[300px] md:min-h-full">
+          <Image
+            src="/images/aestheticPic.png"
+            alt="Mithas syrup collection lineup"
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(135deg, ${COLORS.espresso}40, transparent 60%)`,
+            }}
+          />
         </div>
       </div>
     </Reveal>

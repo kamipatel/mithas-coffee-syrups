@@ -140,6 +140,7 @@ export const recipes = [
     time: "3 min",
     icon: "coffee",
     color: "#7B4B3A",
+    image: "/images/gulabJamunLatte.png",
   },
   {
     title: "Iced Matcha Mithas",

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
 import Divider from "@/components/ui/Divider";
@@ -112,6 +113,24 @@ export default function Hero() {
     <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-[120px] pb-[120px] relative overflow-hidden">
       <GrainOverlay />
 
+      {/* Background photo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/aestheticPic.png"
+          alt="Mithas aesthetic"
+          fill
+          className="object-cover"
+          style={{ opacity: 0.2 }}
+          priority
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `linear-gradient(to bottom, ${COLORS.cream}CC, ${COLORS.cream}40 50%, ${COLORS.cream}CC)`,
+          }}
+        />
+      </div>
+
       {/* Spotlight */}
       <Spotlight
         fill="#C4973B"
@@ -192,27 +211,28 @@ export default function Hero() {
         </div>
       </Reveal>
 
-      {/* Background mandala watermark */}
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 pointer-events-none origin-center"
-        style={{ opacity: 0.15 }}
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-      >
-        <svg width="700" height="700" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="3" fill={COLORS.gold} opacity="0.5" />
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
-            <circle
-              key={a}
-              cx={16 + 9 * Math.cos((a * Math.PI) / 180)}
-              cy={16 + 9 * Math.sin((a * Math.PI) / 180)}
-              r="1.2"
-              fill={COLORS.gold}
-              opacity="0.6"
-            />
-          ))}
-        </svg>
-      </motion.div>
+      {/* Background mandala watermark — perfectly centered using flexbox */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          style={{ opacity: 0.15 }}
+        >
+          <svg width="700" height="700" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="3" fill={COLORS.gold} opacity="0.5" />
+            {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+              <circle
+                key={a}
+                cx={16 + 9 * Math.cos((a * Math.PI) / 180)}
+                cy={16 + 9 * Math.sin((a * Math.PI) / 180)}
+                r="1.2"
+                fill={COLORS.gold}
+                opacity="0.6"
+              />
+            ))}
+          </svg>
+        </motion.div>
+      </div>
 
       {/* Title */}
       <Reveal delay={0.25} y={40}>

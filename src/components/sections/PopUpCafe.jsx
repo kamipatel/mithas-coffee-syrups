@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Coffee, ShoppingBag, Gift, Users } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -66,6 +67,19 @@ export default function PopUpCafe() {
               lattes, matcha, and syrup tastings. Follow us to catch the next
               one.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <div className="mb-10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+            <Image
+              src="/images/pop-up-Pic.png"
+              alt="Mithas pop-up café event in Austin"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
           </div>
         </Reveal>
 
