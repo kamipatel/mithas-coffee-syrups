@@ -3,8 +3,17 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
-import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
+import { Marquee } from "@/components/ui/marquee";
+import Image from "next/image";
 import { INSTAGRAM_URL } from "@/lib/constants";
+
+const BRAND_IMAGES = [
+  "/images/aestheticPic.png",
+  "/images/gulabJamunLatte.png",
+  "/images/matcha.png",
+  "/images/pop-up-Pic.png",
+  "/images/giftbox.png",
+];
 
 function TypingText({ text, className }) {
   const ref = useRef(null);
@@ -28,23 +37,47 @@ function TypingText({ text, className }) {
 
 export default function InstagramCTA() {
   return (
-    <HeroHighlight
-      containerClassName="px-6 py-[70px] md:py-[100px] text-center relative bg-gradient-to-b from-cream to-parchment/[0.03]"
-    >
+    <section className="px-6 pt-12 pb-8 text-center relative bg-cream border-t border-gold/[0.05]">
       <Reveal>
         <p className="font-serif text-[clamp(26px,4.5vw,40px)] text-espresso mb-3 font-normal italic">
-          <Highlight>Follow the journey</Highlight>
+          Follow the journey
         </p>
         <a
           href={INSTAGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-sans text-[17px] text-gold no-underline font-semibold inline-flex items-center gap-1.5 transition-opacity duration-200 hover:opacity-70"
+          className="font-sans text-[17px] text-gold no-underline font-semibold inline-flex items-center gap-1.5 transition-opacity duration-200 hover:opacity-70 mb-10"
         >
           <TypingText text="@mithas.coffeesyrups" />
           <span className="text-xl ml-1">&rarr;</span>
         </a>
       </Reveal>
-    </HeroHighlight>
+
+      {/* Brand image marquee */}
+      <div className="relative mt-2 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
+        <Marquee pauseOnHover className="[--duration:40s] [--gap:1rem]">
+          {BRAND_IMAGES.map((src, i) => (
+            <div key={i} className="relative w-20 h-20 flex-shrink-0">
+              <Image
+                src={src}
+                alt={`Mithas brand image ${i + 1}`}
+                fill
+                className="object-cover rounded-xl border border-gold/10"
+              />
+            </div>
+          ))}
+          {BRAND_IMAGES.map((src, i) => (
+            <div key={`dup-${i}`} className="relative w-20 h-20 flex-shrink-0">
+              <Image
+                src={src}
+                alt={`Mithas brand image ${i + 1}`}
+                fill
+                className="object-cover rounded-xl border border-gold/10"
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
+    </section>
   );
 }

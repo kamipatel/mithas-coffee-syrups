@@ -70,17 +70,17 @@ export default function PopUpCafe() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-stretch">
           {/* Image — left 40% */}
-          <Reveal delay={0.1} className="md:col-span-2">
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] max-h-[400px]">
+          <Reveal delay={0.1} className="md:col-span-2 h-full">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] h-full min-h-[300px]">
               <Image
                 src="/images/pop-up-Pic.png"
                 alt="Mithas pop-up café event in Austin"
-                width={600}
-                height={400}
-                className="w-full h-full object-cover max-h-[400px]"
-                loading="lazy"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+                priority={false}
               />
             </div>
           </Reveal>
