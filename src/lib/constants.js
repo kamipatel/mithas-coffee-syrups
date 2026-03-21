@@ -149,6 +149,7 @@ export const recipes = [
     time: "2 min",
     icon: "glass-water",
     color: "#5B8C5A",
+    image: "/images/matcha.png",
   },
   {
     title: "The Gift Box Moment",
@@ -157,6 +158,7 @@ export const recipes = [
     time: "Perfect gift",
     icon: "gift",
     color: "#C4973B",
+    image: "/images/giftbox.png",
   },
 ];
 

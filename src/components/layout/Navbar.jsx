@@ -55,7 +55,8 @@ export default function Navbar() {
             alt="mithas"
             width={120}
             height={32}
-            className="h-8 w-auto"
+            className="h-8 w-auto rounded-xl"
+            style={{ width: 'auto', height: '32px' }}
             priority
           />
         </button>

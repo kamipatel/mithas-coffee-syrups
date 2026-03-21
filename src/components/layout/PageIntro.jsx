@@ -35,12 +35,14 @@ export default function PageIntro({ children }) {
             exit={{ y: "-100%" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <TextGenerateEffect
-              words="mithas"
-              className="font-serif text-[clamp(48px,10vw,80px)] font-normal text-gold tracking-[-0.03em]"
-              duration={0.6}
-              staggerDelay={0.06}
-            />
+            <div className="relative">
+              <TextGenerateEffect
+                words="mithas"
+                className="font-serif text-[clamp(48px,10vw,80px)] font-normal text-gold tracking-[-0.03em]"
+                duration={0.6}
+                staggerDelay={0.06}
+              />
+            </div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

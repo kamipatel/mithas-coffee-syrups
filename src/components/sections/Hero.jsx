@@ -12,7 +12,6 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { FlipWords } from "@/components/ui/flip-words";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { MovingBorder } from "@/components/ui/moving-border";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { COLORS, INSTAGRAM_URL } from "@/lib/constants";
 
@@ -290,22 +289,15 @@ export default function Hero() {
               Explore Syrups
             </span>
           </ShimmerButton>
-          <MovingBorder
-            duration={8000}
-            rx="100"
-            ry="100"
-            containerClassName="cursor-pointer"
-            className="bg-transparent text-espresso font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] active:scale-[0.98] border-[1.5px] border-espresso/80 hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)]"
-            as="a"
+          <a
+            className="flex items-center gap-2 justify-center bg-transparent text-espresso font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] active:scale-[0.98] border-[1.5px] border-espresso/80 hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)] no-underline cursor-pointer"
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex items-center gap-2 justify-center">
-              <InstagramIcon size={18} />
-              DM to Order
-            </div>
-          </MovingBorder>
+            <InstagramIcon size={18} />
+            DM to Order
+          </a>
         </div>
       </Reveal>
 

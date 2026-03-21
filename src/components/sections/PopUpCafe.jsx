@@ -70,45 +70,51 @@ export default function PopUpCafe() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <div className="mb-10 rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
-            <Image
-              src="/images/pop-up-Pic.png"
-              alt="Mithas pop-up café event in Austin"
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
-              loading="lazy"
-            />
-          </div>
-        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+          {/* Image — left 40% */}
+          <Reveal delay={0.1} className="md:col-span-2">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] max-h-[400px]">
+              <Image
+                src="/images/pop-up-Pic.png"
+                alt="Mithas pop-up café event in Austin"
+                width={600}
+                height={400}
+                className="w-full h-full object-cover max-h-[400px]"
+                loading="lazy"
+              />
+            </div>
+          </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {features.map((item, i) => {
-            const Icon = iconMap[item.icon];
-            return (
-              <motion.div
-                key={i}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={cardVariants}
-              >
-                <div className="bg-white rounded-2xl p-6 shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-gold/[0.06] text-center h-full">
-                  <div className="w-[52px] h-[52px] rounded-full bg-gold/[0.08] flex items-center justify-center mx-auto mb-3">
-                    <Icon size={24} className="text-gold" strokeWidth={1.5} />
-                  </div>
-                  <h4 className="font-serif text-lg text-espresso mb-2 font-semibold">
-                    {item.title}
-                  </h4>
-                  <p className="font-sans text-[13px] text-walnut leading-[1.65] font-light">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          {/* Content — right 60% */}
+          <div className="md:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {features.map((item, i) => {
+                const Icon = iconMap[item.icon];
+                return (
+                  <motion.div
+                    key={i}
+                    custom={i}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    variants={cardVariants}
+                  >
+                    <div className="bg-white rounded-2xl p-5 shadow-[0_2px_12px_rgba(0,0,0,0.02)] border border-gold/[0.06] text-center h-full">
+                      <div className="w-[44px] h-[44px] rounded-full bg-gold/[0.08] flex items-center justify-center mx-auto mb-2.5">
+                        <Icon size={20} className="text-gold" strokeWidth={1.5} />
+                      </div>
+                      <h4 className="font-serif text-base text-espresso mb-1.5 font-semibold">
+                        {item.title}
+                      </h4>
+                      <p className="font-sans text-xs text-walnut leading-[1.65] font-light">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

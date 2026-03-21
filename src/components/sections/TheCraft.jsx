@@ -1,17 +1,12 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { COLORS } from "@/lib/constants";
-
-const WavyBackground = dynamic(
-  () => import("@/components/ui/wavy-background").then((mod) => mod.WavyBackground),
-  { ssr: false }
-);
 
 const BULLETS = [
   {
@@ -28,33 +23,6 @@ const BULLETS = [
     id: "heritage",
     text: "Desi heritage — recipes inspired by generations of family tradition",
     delay: 0.3,
-  },
-];
-
-const GRADIENT_ORBS = [
-  {
-    size: "w-[200px] h-[200px]",
-    color: COLORS.gold,
-    blur: "blur-[80px]",
-    position: { top: "10%", left: "15%" },
-    animate: { x: [0, 30, -10, 0], y: [0, -25, 15, 0], scale: [1, 1.1, 0.95, 1] },
-    duration: 8,
-  },
-  {
-    size: "w-[140px] h-[140px]",
-    color: COLORS.rose,
-    blur: "blur-[60px]",
-    position: { bottom: "15%", right: "10%" },
-    animate: { x: [0, -20, 15, 0], y: [0, 18, -12, 0], scale: [1, 0.92, 1.08, 1] },
-    duration: 6,
-  },
-  {
-    size: "w-[100px] h-[100px]",
-    color: "#D4A843",
-    blur: "blur-[50px]",
-    position: { top: "50%", left: "60%" },
-    animate: { x: [0, 25, -18, 0], y: [0, -15, 22, 0], scale: [1, 1.06, 0.94, 1] },
-    duration: 10,
   },
 ];
 
@@ -96,57 +64,15 @@ export default function TheCraft() {
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
 
-          {/* Left column — WavyBackground with orbs and rotating emoji */}
-          <div className="md:col-span-2">
-            <WavyBackground
-              containerClassName="rounded-3xl overflow-hidden"
-              className="flex items-center justify-center"
-              speed="slow"
-              waveOpacity={0.4}
-              blur={12}
-              colors={[
-                "rgba(196, 151, 59, 0.25)",
-                "rgba(201, 168, 124, 0.2)",
-                "rgba(196, 114, 127, 0.15)",
-                "rgba(237, 231, 219, 0.3)",
-                "rgba(212, 168, 67, 0.18)",
-              ]}
-            >
-              <div className="relative w-full" style={{ minHeight: "280px" }}>
-                {/* Animated gradient orbs */}
-                {GRADIENT_ORBS.map((orb, i) => (
-                  <motion.div
-                    key={i}
-                    className={`absolute rounded-full pointer-events-none ${orb.size} ${orb.blur}`}
-                    style={{
-                      backgroundColor: orb.color,
-                      opacity: 0.35,
-                      ...orb.position,
-                    }}
-                    animate={orb.animate}
-                    transition={{
-                      duration: orb.duration,
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      ease: "easeInOut",
-                    }}
-                  />
-                ))}
-
-                {/* Rotating honey emoji */}
-                <motion.span
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl select-none pointer-events-none"
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                >
-                  🍯
-                </motion.span>
-              </div>
-            </WavyBackground>
+          {/* Left column — Image */}
+          <div className="md:col-span-2 relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-walnut/5">
+            <Image
+              src="/images/aestheticPic.png"
+              alt="Mithas syrup bottles lineup"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
           </div>
 
           {/* Right column — text content */}

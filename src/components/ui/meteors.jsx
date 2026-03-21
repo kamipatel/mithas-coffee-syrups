@@ -1,11 +1,27 @@
+"use client";
+
+import { useState, useEffect, useMemo } from "react";
 import { cn } from "@/lib/utils";
 
 export function Meteors({ number = 3, className }) {
-  const meteors = new Array(number).fill(true);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const meteors = useMemo(
+    () =>
+      Array.from({ length: number }, () => ({
+        left: `${Math.floor(Math.random() * 80 + 10)}%`,
+        delay: `${Math.random() * 3}s`,
+        duration: `${Math.floor(Math.random() * 4 + 4)}s`,
+      })),
+    [number]
+  );
+
+  if (!mounted) return null;
 
   return (
     <>
-      {meteors.map((_, idx) => (
+      {meteors.map((m, idx) => (
         <span
           key={idx}
           className={cn(
@@ -16,9 +32,9 @@ export function Meteors({ number = 3, className }) {
           )}
           style={{
             top: 0,
-            left: `${Math.floor(Math.random() * 80 + 10)}%`,
-            animationDelay: `${Math.random() * 3}s`,
-            animationDuration: `${Math.floor(Math.random() * 4 + 4)}s`,
+            left: m.left,
+            animationDelay: m.delay,
+            animationDuration: m.duration,
           }}
         />
       ))}
