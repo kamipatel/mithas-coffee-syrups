@@ -263,34 +263,34 @@ export default function Hero() {
       {/* CTA buttons */}
       <Reveal delay={0.85} y={20}>
         <div className="flex gap-3.5 mt-10 flex-wrap justify-center">
+          <ShimmerButton
+            shimmerColor="#C4973B"
+            shimmerSize="0.08em"
+            background="#2A1810"
+            borderRadius="100px"
+            className="px-[38px] py-[15px]"
+            onClick={() => scrollTo("syrups")}
+          >
+            <span className="font-sans text-[15px] font-semibold text-cream">
+              Explore Syrups
+            </span>
+          </ShimmerButton>
           <MovingBorder
             duration={8000}
             rx="100"
             ry="100"
             containerClassName="cursor-pointer"
-            className="bg-espresso text-cream font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)] active:scale-[0.98]"
-            as="button"
-            onClick={() => scrollTo("syrups")}
+            className="bg-transparent text-espresso font-sans text-[15px] font-semibold px-[38px] py-4 rounded-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-[3px] active:scale-[0.98] border-[1.5px] border-espresso/80 hover:shadow-[0_12px_36px_rgba(42,24,16,0.19)]"
+            as="a"
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Explore Syrups
-          </MovingBorder>
-          <ShimmerButton
-            shimmerColor="#C4973B"
-            shimmerSize="0.08em"
-            background="transparent"
-            borderRadius="100px"
-            className="px-[38px] py-[15px] border-[1.5px] border-espresso/80"
-          >
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 no-underline font-sans text-[15px] font-semibold text-espresso"
-            >
+            <div className="flex items-center gap-2 justify-center">
               <InstagramIcon size={18} />
               DM to Order
-            </a>
-          </ShimmerButton>
+            </div>
+          </MovingBorder>
         </div>
       </Reveal>
 

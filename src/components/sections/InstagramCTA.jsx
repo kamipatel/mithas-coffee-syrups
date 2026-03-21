@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Reveal from "@/components/ui/Reveal";
-import { HeroHighlight } from "@/components/ui/hero-highlight";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { INSTAGRAM_URL } from "@/lib/constants";
 
 function TypingText({ text, className }) {
@@ -33,7 +33,7 @@ export default function InstagramCTA() {
     >
       <Reveal>
         <p className="font-serif text-[clamp(26px,4.5vw,40px)] text-espresso mb-3 font-normal italic">
-          Follow the journey
+          <Highlight>Follow the journey</Highlight>
         </p>
         <a
           href={INSTAGRAM_URL}
