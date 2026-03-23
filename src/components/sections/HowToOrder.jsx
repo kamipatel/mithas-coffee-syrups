@@ -59,7 +59,7 @@ export default function HowToOrder() {
   const stepRefs = [step1Ref, step2Ref, step3Ref];
 
   return (
-    <section id="order" className="px-6 py-12 bg-cream">
+    <section id="order" className="px-6 pb-12 bg-cream">
       <div className="max-w-[900px] mx-auto">
         <Reveal>
           <div className="text-center mb-12">
