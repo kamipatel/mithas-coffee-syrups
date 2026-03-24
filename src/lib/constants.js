@@ -36,7 +36,7 @@ export const syrups = [
     recipe: "Add 1\u20132 tbsp to steamed milk. Top with dried rose petals.",
     tag: "Bestseller",
     icon: "flower2",
-    image: "/images/FE920104-7440-4E57-A58C-7F9D6BDA2F5E.JPG",
+    image: "/images/IMG_4039.jpg",
   },
   {
     id: "anjeer",
@@ -101,6 +101,7 @@ export const syrups = [
       "Incredible in matcha. Add a pinch of cardamom for the full experience.",
     tag: "Winter Favorite",
     icon: "flame",
+    image: "/images/matcha.png",
   },
 ];
 

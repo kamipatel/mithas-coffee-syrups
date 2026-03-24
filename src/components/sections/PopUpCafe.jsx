@@ -199,16 +199,15 @@ export default function PopUpCafe() {
             </div>
 
             <p className="font-sans text-[13px] text-walnut/50 mt-5 font-light">
-              Upcoming events will be posted on{" "}
+              Follow us on Instagram for upcoming event dates:{" "}
               <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gold underline underline-offset-2 hover:text-gold/80 transition-colors"
               >
-                our Instagram
-              </a>{" "}
-              &mdash; follow to stay updated
+                @mithas.coffeesyrups
+              </a>
             </p>
           </div>
         </Reveal>

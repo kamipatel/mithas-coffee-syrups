@@ -73,6 +73,7 @@ export default function SamplerPack() {
             fill
             className="object-cover"
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
           <div
             className="absolute inset-0"

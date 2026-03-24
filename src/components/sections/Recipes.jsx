@@ -82,7 +82,7 @@ function RecipeCardContent({ recipe: r }) {
     <div className="bg-white rounded-2xl shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full flex flex-col overflow-hidden">
       {r.image && (
         <div className="relative w-full h-44">
-          <Image src={r.image} alt={r.title} fill className="object-cover" loading="lazy" />
+          <Image src={r.image} alt={r.title} fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 100vw, 33vw" />
         </div>
       )}
       <div className="p-6 md:p-8 flex flex-col flex-grow">
