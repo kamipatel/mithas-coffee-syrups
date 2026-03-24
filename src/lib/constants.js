@@ -68,6 +68,7 @@ export const syrups = [
     recipe: "Perfect in a hot latte or iced matcha. A Ramadan essential.",
     tag: "Ramadan Special",
     icon: "tree-palm",
+    image: "/images/IMG_6484.jpg",
   },
   {
     id: "chikki",
@@ -83,6 +84,7 @@ export const syrups = [
     recipe: "Drizzle into a banana smoothie or warm chai latte.",
     tag: "Crunchy Vibes",
     icon: "cookie",
+    image: "/images/IMG_6508.jpg",
   },
   {
     id: "gajar",

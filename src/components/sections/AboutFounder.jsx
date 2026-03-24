@@ -62,26 +62,19 @@ export default function AboutFounder() {
           <div className="lg:col-span-7 flex flex-col gap-8 pt-10 lg:pt-4">
             <div className="space-y-6">
               <BlurFade delay={0.2} inView>
-                <p className="font-serif text-2xl text-espresso leading-relaxed italic">
-                  &ldquo;I grew up in Mumbai, where chai breaks, family gatherings, and everyday moments were always tied to flavor, warmth, and tradition.&rdquo;
-                </p>
-              </BlurFade>
-
-              <div className="h-px w-20 bg-gold/30" />
-
-              <BlurFade delay={0.3} inView>
-                <div className="space-y-6 text-walnut leading-loose font-light">
-                  <p className="font-sans text-base">
-                    After moving to Houston as a teenager, I found myself wanting to
-                    recreate those familiar tastes in new ways &mdash; especially
-                    through coffee. Mithas began from that idea: bringing South
-                    Asian-inspired flavors into everyday coffee experiences in a way
-                    that feels both nostalgic and elevated.
-                  </p>
-                  <p className="font-sans text-base">
-                    What started as experimenting with homemade syrups became a way
-                    for me to blend culture, creativity, and entrepreneurship into
-                    something I genuinely love sharing with others.
+                <div className="space-y-6 text-espresso leading-loose font-normal">
+                  <p className="font-serif text-xl">
+                    I grew up in Mumbai, where chai breaks, family gatherings, and
+                    everyday moments were always tied to flavor, warmth, and
+                    tradition. After moving to Houston as a teenager, I found
+                    myself wanting to recreate those familiar tastes in new ways
+                    &mdash; especially through coffee. Mithas began from that
+                    idea: bringing South Asian-inspired flavors into everyday
+                    coffee experiences in a way that feels both nostalgic and
+                    elevated. What started as experimenting with homemade syrups
+                    became a way for me to blend culture, creativity, and
+                    entrepreneurship into something I genuinely love sharing
+                    with others.
                   </p>
                 </div>
               </BlurFade>

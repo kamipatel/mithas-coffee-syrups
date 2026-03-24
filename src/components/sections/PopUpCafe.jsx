@@ -116,14 +116,23 @@ export default function PopUpCafe() {
 
         {/* Event Photos Gallery */}
         <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] aspect-[4/3]">
+              <Image
+                src="/images/1E18B0B4-C3F0-4555-B5BF-ABF727E703A7.JPG"
+                alt="Mithas bottle lineup with specialty lattes"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
             <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] aspect-[4/3]">
               <Image
                 src="/images/IMG_6274.jpg"
                 alt="Mithas pop-up booth setup"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] aspect-[4/3]">
@@ -132,7 +141,7 @@ export default function PopUpCafe() {
                 alt="Mithas pop-up event products and syrups"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
           </div>
