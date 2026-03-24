@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { INSTAGRAM_URL } from "@/lib/constants";
 import { getIcon } from "@/lib/icons";
+import Image from "next/image";
 import { Coffee } from "lucide-react";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { Lens } from "@/components/ui/lens";
@@ -28,19 +29,30 @@ export default function SyrupCard({ syrup, isActive, onClick }) {
   const imageContent = (
     <div
       className="h-[140px] relative flex items-center justify-center overflow-hidden"
-      style={{ background: s.bg }}
+      style={s.image ? {} : { background: s.bg }}
     >
-      {(() => {
-        const Icon = getIcon(s.icon);
-        return (
-          <span
-            className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            style={{ transform: isActive ? "scale(1.1)" : "scale(1)", color: s.color }}
-          >
-            <Icon size={44} strokeWidth={1.2} />
-          </span>
-        );
-      })()}
+      {s.image ? (
+        <Image
+          src={s.image}
+          alt={s.name}
+          fill
+          className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          style={{ transform: isActive ? "scale(1.1)" : "scale(1)" }}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      ) : (
+        (() => {
+          const Icon = getIcon(s.icon);
+          return (
+            <span
+              className="transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              style={{ transform: isActive ? "scale(1.1)" : "scale(1)", color: s.color }}
+            >
+              <Icon size={44} strokeWidth={1.2} />
+            </span>
+          );
+        })()
+      )}
 
       {s.tag && (
         s.tag === "Bestseller" ? (

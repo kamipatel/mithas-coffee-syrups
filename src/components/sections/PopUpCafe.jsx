@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Coffee, ShoppingBag, Gift, Users } from "lucide-react";
+import { Coffee, ShoppingBag, Gift, Users, Mail } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
+import InstagramIcon from "@/components/ui/InstagramIcon";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { COLORS, INSTAGRAM_URL } from "@/lib/constants";
 
 const iconMap = {
   coffee: Coffee,
@@ -110,6 +113,96 @@ export default function PopUpCafe() {
             </div>
           </div>
         </div>
+
+        {/* Event Photos Gallery */}
+        <Reveal delay={0.15}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] aspect-[4/3]">
+              <Image
+                src="/images/IMG_6274.jpg"
+                alt="Mithas pop-up booth setup"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.06)] aspect-[4/3]">
+              <Image
+                src="/images/IMG_2008.jpg"
+                alt="Mithas pop-up event products and syrups"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Event Booking Subsection */}
+        <Reveal delay={0.2}>
+          <div className="mt-14 text-center">
+            <h3 className="font-serif text-[clamp(24px,4vw,32px)] text-espresso font-medium mb-3">
+              Book Mithas for Your Event
+            </h3>
+            <p className="font-sans text-[15px] text-walnut leading-[1.75] font-light max-w-[480px] mx-auto mb-8">
+              Want Mithas at your next event? We bring the syrups, the lattes,
+              and the vibes.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="mailto:ruhinanji@gmail.com?subject=Event%20Booking%20Inquiry"
+                className="inline-block"
+              >
+                <ShimmerButton
+                  shimmerColor="#C4973B"
+                  shimmerSize="0.06em"
+                  background={`linear-gradient(135deg, ${COLORS.espresso}, ${COLORS.brown})`}
+                  borderRadius="100px"
+                  className="px-9 py-[16px]"
+                >
+                  <span className="inline-flex items-center gap-3 font-sans text-base font-semibold text-cream">
+                    <Mail size={20} />
+                    Book via Email
+                  </span>
+                </ShimmerButton>
+              </a>
+
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <ShimmerButton
+                  shimmerColor="#C4973B"
+                  shimmerSize="0.06em"
+                  background={`linear-gradient(135deg, ${COLORS.brown}, ${COLORS.caramel})`}
+                  borderRadius="100px"
+                  className="px-9 py-[16px]"
+                >
+                  <span className="inline-flex items-center gap-3 font-sans text-base font-semibold text-cream">
+                    <InstagramIcon size={20} />
+                    DM to Order
+                  </span>
+                </ShimmerButton>
+              </a>
+            </div>
+
+            <p className="font-sans text-[13px] text-walnut/50 mt-5 font-light">
+              Upcoming events will be posted on{" "}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold underline underline-offset-2 hover:text-gold/80 transition-colors"
+              >
+                our Instagram
+              </a>{" "}
+              &mdash; follow to stay updated
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

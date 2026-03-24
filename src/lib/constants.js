@@ -36,6 +36,7 @@ export const syrups = [
     recipe: "Add 1\u20132 tbsp to steamed milk. Top with dried rose petals.",
     tag: "Bestseller",
     icon: "flower2",
+    image: "/images/FE920104-7440-4E57-A58C-7F9D6BDA2F5E.JPG",
   },
   {
     id: "anjeer",
@@ -51,6 +52,7 @@ export const syrups = [
     recipe: "Stir into cold brew or espresso. Pairs beautifully with oat milk.",
     tag: "Rich & Nutty",
     icon: "leaf",
+    image: "/images/IMG_2301.JPG",
   },
   {
     id: "date",
@@ -140,7 +142,7 @@ export const recipes = [
     time: "3 min",
     icon: "coffee",
     color: "#7B4B3A",
-    image: "/images/gulabJamunLatte.png",
+    image: "/images/4C4C3A73-3EC1-4FAE-AEEA-C61A0F0C372B.jpeg",
   },
   {
     title: "Iced Matcha Mithas",
@@ -169,7 +171,7 @@ export const navLinks = [
   { label: "Order", id: "order" },
 ];
 
-export const navIds = ["hero", "story", "syrups", "recipes", "order", "popups"];
+export const navIds = ["hero", "story", "founder", "syrups", "recipes", "order", "shipping", "popups"];
 
 export const popupFeatures = [
   {

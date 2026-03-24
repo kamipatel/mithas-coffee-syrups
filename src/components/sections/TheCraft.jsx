@@ -67,8 +67,8 @@ export default function TheCraft() {
           {/* Left column — Image */}
           <div className="md:col-span-2 relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-walnut/5">
             <Image
-              src="/images/aestheticPic2.png"
-              alt="Mithas syrup bottles lineup"
+              src="/images/IMG_6508.jpg"
+              alt="Mithas syrup bottles with tulips"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 40vw"

@@ -1,5 +1,5 @@
 import "./globals.css";
-import { cormorantGaramond, outfit } from "@/lib/fonts";
+import { cormorantGaramond, outfit, dancingScript } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 
 export const metadata = {
@@ -44,7 +44,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={cn(cormorantGaramond.variable, outfit.variable)}
+      className={cn(
+        cormorantGaramond.variable,
+        outfit.variable,
+        dancingScript.variable
+      )}
     >
       <body className="bg-cream min-h-screen font-sans text-espresso">
         {children}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import SectionLabel from "@/components/ui/SectionLabel";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -54,6 +55,19 @@ export default function Story() {
                     className="opacity-30"
                   />
                 </div>
+              </div>
+            </Reveal>
+
+            {/* Visual accent image */}
+            <Reveal delay={0.3}>
+              <div className="mt-10 relative w-full max-w-[320px] mx-auto aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gold/[0.08]">
+                <Image
+                  src="/images/IMG_4039.jpg"
+                  alt="Mithas Gulab Jamun syrup bottle with roses"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 320px"
+                />
               </div>
             </Reveal>
           </div>
