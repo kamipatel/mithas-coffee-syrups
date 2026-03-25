@@ -14,7 +14,6 @@ const TheCraft = dynamic(() => import("@/components/sections/TheCraft"));
 const Recipes = dynamic(() => import("@/components/sections/Recipes"));
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials"));
 const HowToOrder = dynamic(() => import("@/components/sections/HowToOrder"));
-const Shipping = dynamic(() => import("@/components/sections/Shipping"));
 const PopUpCafe = dynamic(() => import("@/components/sections/PopUpCafe"));
 const InstagramCTA = dynamic(() => import("@/components/sections/InstagramCTA"));
 
@@ -40,8 +39,6 @@ export default function Home() {
         <Testimonials />
         <AnimatedDivider variant="dots" className="py-8" />
         <HowToOrder />
-        <AnimatedDivider variant="dots" />
-        <Shipping />
         <AnimatedDivider variant="wave" className="rotate-180" />
         <PopUpCafe />
         <AnimatedDivider variant="expand" />
