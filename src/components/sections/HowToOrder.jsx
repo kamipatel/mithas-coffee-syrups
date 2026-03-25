@@ -29,7 +29,7 @@ const pickupSteps = [
   {
     step: "03",
     title: "Pick Up",
-    desc: "Grab your syrups on West Campus at a time that works for you. That\u2019s it!",
+    desc: "Grab your syrups at West Campus or in Sugar Land, TX at a time that works for you. That\u2019s it!",
     Icon: MapPin,
     color: COLORS.fig,
   },
@@ -60,7 +60,7 @@ const shipSteps = [
 ];
 
 const tabs = [
-  { id: "pickup", label: "Pickup \u00b7 West Campus" },
+  { id: "pickup", label: "Pickup \u00b7 West Campus & Sugar Land, TX" },
   { id: "ship", label: "Ship Anywhere" },
 ];
 

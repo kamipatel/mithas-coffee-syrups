@@ -215,7 +215,7 @@ export default function Hero() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
         <span className="font-sans text-[11px] text-gold uppercase tracking-[0.2em] font-semibold leading-none mt-[1px]">
-          ACCEPTING ORDERS &middot; WEST CAMPUS PICKUP
+          ACCEPTING ORDERS &middot; WEST CAMPUS & SUGAR LAND, TX PICKUP
         </span>
       </motion.div>
 
