@@ -25,7 +25,7 @@ export default function Testimonials() {
         speed="slow"
         pauseOnHover
         renderItem={(item) => (
-          <div className="bg-white rounded-2xl p-8 shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full relative">
+          <div className="bg-white rounded-2xl p-8 shadow-[0_2px_16px_rgba(0,0,0,0.03)] border border-gold/[0.06] h-full relative flex flex-col min-h-[200px]">
             {/* Stars */}
             <div className="flex gap-1 mb-4 relative z-10">
               {[...Array(5)].map((_, i) => (
@@ -42,7 +42,7 @@ export default function Testimonials() {
             <span className="absolute top-4 left-6 font-serif text-[64px] text-gold/[0.15] leading-none select-none">
               &ldquo;
             </span>
-            <p className="font-serif text-[clamp(18px,2.5vw,22px)] text-espresso leading-[1.6] mb-6 italic font-normal relative z-10">
+            <p className="font-serif text-[clamp(18px,2.5vw,22px)] text-espresso leading-[1.6] mb-6 italic font-normal relative z-10 flex-1">
               &ldquo;{item.text}&rdquo;
             </p>
             <div>

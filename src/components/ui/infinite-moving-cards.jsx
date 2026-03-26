@@ -38,7 +38,7 @@ export function InfiniteMovingCards({
       ref={containerRef}
       className={cn(
         "scroller relative z-10 overflow-hidden",
-        "[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]",
+        "[mask-image:linear-gradient(to_right,transparent,white_10%,white_85%,transparent)]",
         className
       )}
     >
@@ -55,7 +55,7 @@ export function InfiniteMovingCards({
         }}
       >
         {items.map((item, idx) => (
-          <li key={idx} className="w-[350px] max-w-full flex-shrink-0">
+          <li key={idx} className="w-[320px] max-w-full flex-shrink-0">
             {renderItem ? renderItem(item, idx) : null}
           </li>
         ))}
