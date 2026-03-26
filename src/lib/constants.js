@@ -121,21 +121,19 @@ export const allProducts = [...syrups, samplerPack];
 
 export const testimonials = [
   {
-    text: "I put the Gulab Jamun syrup in my matcha and I literally can\u2019t go back to regular lattes.",
-    name: "Priya S.",
-    detail: "UT Austin \u201926",
+    text: "Delicious syrups! Amazing in matcha! Loved the gulab jamun",
+    name: "Sidneebell",
   },
   {
-    text: "Bought the sampler pack as a gift and ended up keeping it for myself. The Salted Date is unreal.",
-    name: "Amir K.",
-    detail: "Ramadan 2026",
+    text: "The syrups r fire (my favorite is the gulab jamun one) and the founder is amazing! Go Ruhi!",
+    name: "Meghana Singireddy",
   },
   {
-    text: "Finally, coffee syrups that actually taste like the real thing. Not just \u2018inspired by\u2019 \u2014 these ARE the flavors.",
-    name: "Neha R.",
-    detail: "Pop-Up Caf\u00e9 regular",
+    text: "The gulab jamun syrup is so good in my coffee!",
+    name: "Rasika",
   },
 ];
+
 
 export const recipes = [
   {
